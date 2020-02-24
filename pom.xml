@@ -9,6 +9,7 @@
   
   <modules>
   	<module>employee_data</module>
+  	<module>employee_service</module>
   </modules>
   
 <dependencies>
@@ -19,6 +20,15 @@
     <artifactId>spring-core</artifactId>
     <version>5.2.3.RELEASE</version> 
 </dependency>
+
+<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>3.3.0</version>
+    <scope>test</scope>
+</dependency>
+
 
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
 <dependency>
@@ -42,6 +52,15 @@
     <version>4.13</version>
     <scope>test</scope>
 </dependency>
+
+<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+<dependency>
+    <groupId>org.assertj</groupId>
+    <artifactId>assertj-core</artifactId>
+    <version>3.15.0</version>
+    <scope>test</scope>
+</dependency>
+
 
 
 </dependencies> 

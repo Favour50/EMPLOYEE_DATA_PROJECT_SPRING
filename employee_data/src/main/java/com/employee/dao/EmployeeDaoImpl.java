@@ -2,6 +2,7 @@ package com.employee.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,28 +19,49 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	
 	
 	public void saveEmployee(Employee newEmployee) {
-	
-		
 		Session currentSession =
 				sessionFactory.getCurrentSession();
+		
 		currentSession.save(newEmployee);
-
 	}
 
+	
 	
 	public Employee getById(int employeeId) {
 		Session currentSession =
 				sessionFactory.getCurrentSession();
 		
 		Employee savedEmployee =
-				currentSession.get(Employee.class,employeeId);
-		
-		return savedEmployee;
+				currentSession.get(Employee.class, employeeId);
+		 
+		 return savedEmployee;
 	}
 
 	
+
 	public Employee getByEmail(String email) {
-			return null;
+		
+		Session currentSession =
+				sessionFactory.getCurrentSession();
+		
+		Query<Employee> query = currentSession.createQuery("FROM Employee e WHERE e.email =: mail", Employee.class);
+		query.setParameter("mail", email);
+		Employee employee = null;
+		try {
+		 employee = query.getResultList().get(0);
+		}
+		catch(RuntimeException re) {
+			
+			re.printStackTrace();
+		}
+		return employee;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeDaoImpl[sessionFactory=" + sessionFactory + "]";
 	}
 
 }
+
+

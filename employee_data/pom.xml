@@ -6,12 +6,19 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
+  <packaging>jar</packaging>
+  
   <artifactId>employee_data</artifactId>
   
+   <properties>
+  <maven.complier.source>12</maven.complier.source>
+    <maven.complier.target>12</maven.complier.target>
+  </properties>
   <name>Employee data access</name>
   
-  <dependencies>
   
+  <dependencies>
+  <!--  hibernate dependencies..this is Hibernate core and HibernateTransactionManager -->
   <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 <dependency>
     <groupId>org.hibernate</groupId>
@@ -19,6 +26,7 @@
     <version>5.4.10.Final</version>
 </dependency>
 
+<!--  hibernate dependencies..this is Hibernate core and HibernateTransactionManager -->
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
 <dependency>
     <groupId>org.springframework</groupId>
