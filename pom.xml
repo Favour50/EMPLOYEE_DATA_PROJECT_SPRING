@@ -10,6 +10,7 @@
   <modules>
   	<module>employee_data</module>
   	<module>employee_service</module>
+  	<module>employee_web</module>
   </modules>
   
 <dependencies>

@@ -10,8 +10,8 @@
   
   <artifactId>employee_data</artifactId>
   
-   <properties>
-  <maven.complier.source>12</maven.complier.source>
+  <properties>
+    <maven.complier.source>12</maven.complier.source>
     <maven.complier.target>12</maven.complier.target>
   </properties>
   <name>Employee data access</name>
